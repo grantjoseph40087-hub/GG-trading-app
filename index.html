@@ -1,0 +1,32 @@
+<section class="cards">
+  <div class="card"><small>BALANCE</small><strong id="balance">$10,000.00</strong></div>
+  <div class="card"><small>EQUITY</small><strong id="equity">$10,000.00</strong></div>
+  <div class="card"><small>P/L</small><strong id="pnl">$0.00</strong></div>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <div>
+      <small>MARKET</small>
+      <h2>BTC/USD</h2>
+    </div>
+    <div class="price" id="price">$65,000.00</div>
+  </div>
+  <div class="chart" id="chart"></div>
+  <div class="trade-row">
+    <input id="amount" type="number" min="1" value="100" placeholder="Amount">
+    <button class="buy" onclick="trade('BUY')">BUY</button>
+    <button class="sell" onclick="trade('SELL')">SELL</button>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-head"><h2>Positions</h2><button class="ghost" onclick="closeAll()">Close All</button></div>
+  <div id="positions" class="positions"><p class="muted">No open positions.</p></div>
+</section>
+
+<section class="warning">
+  <strong>Paper trading only</strong>
+  <p>This starter app does not connect to a broker and does not place real trades. Use it to test your strategy safely.</p>
+</section>
+�
