@@ -1,32 +1,313 @@
-<section class="cards">
-  <div class="card"><small>BALANCE</small><strong id="balance">$10,000.00</strong></div>
-  <div class="card"><small>EQUITY</small><strong id="equity">$10,000.00</strong></div>
-  <div class="card"><small>P/L</small><strong id="pnl">$0.00</strong></div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<section class="panel">
-  <div class="panel-head">
-    <div>
-      <small>MARKET</small>
-      <h2>BTC/USD</h2>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#050505">
+
+  <title>GG Trader</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    GG <span>TRADER</span>
+  </div>
+
+  <div class="status">
+    <span></span> PAPER TRADING
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      SUPERCAR TRADING EDITION
     </div>
-    <div class="price" id="price">$65,000.00</div>
-  </div>
-  <div class="chart" id="chart"></div>
-  <div class="trade-row">
-    <input id="amount" type="number" min="1" value="100" placeholder="Amount">
-    <button class="buy" onclick="trade('BUY')">BUY</button>
-    <button class="sell" onclick="trade('SELL')">SELL</button>
-  </div>
-</section>
 
-<section class="panel">
-  <div class="panel-head"><h2>Positions</h2><button class="ghost" onclick="closeAll()">Close All</button></div>
-  <div id="positions" class="positions"><p class="muted">No open positions.</p></div>
-</section>
+    <h1>
+      Trade Smarter.<br>
+      <strong>Protect Capital.</strong>
+    </h1>
 
-<section class="warning">
-  <strong>Paper trading only</strong>
-  <p>This starter app does not connect to a broker and does not place real trades. Use it to test your strategy safely.</p>
-</section>
-�
+    <p class="sub">
+      GG Trader is a paper-trading dashboard designed
+      to test trading ideas safely before connecting
+      to any real broker.
+    </p>
+
+  </section>
+
+
+  <!-- BALANCE -->
+
+  <section class="grid">
+
+    <div class="card">
+      <p>BALANCE</p>
+
+      <div class="balance">
+        <h2 id="balance">R500.00</h2>
+        <small>DEMO ACCOUNT</small>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <p>MARKET PRICE</p>
+
+      <div class="price" id="price">
+        $67,500.00
+      </div>
+
+      <div class="change" id="change">
+        0.00%
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- MARKET -->
+
+  <section class="card">
+
+    <div class="section-title">
+
+      <h3>MARKET</h3>
+
+      <span>LIVE DEMO PRICE</span>
+
+    </div>
+
+
+    <select id="market">
+
+      <option value="BTC/USD">
+        BTC/USD
+      </option>
+
+      <option value="XAUUSD">
+        XAUUSD
+      </option>
+
+      <option value="EURUSD">
+        EURUSD
+      </option>
+
+    </select>
+
+  </section>
+
+
+  <!-- TRADE -->
+
+  <section class="card">
+
+    <div class="section-title">
+
+      <h3>DEMO TRADE</h3>
+
+      <span>PAPER ONLY</span>
+
+    </div>
+
+
+    <div class="levels">
+
+      <label>
+        TRADE AMOUNT
+
+        <input
+          id="amount"
+          type="number"
+          value="100"
+          min="1"
+          placeholder="Amount">
+      </label>
+
+
+      <label>
+        RISK
+
+        <input
+          id="riskAmount"
+          type="number"
+          value="1"
+          min="0.1"
+          step="0.1"
+          placeholder="%">
+      </label>
+
+
+      <label>
+        TIMEFRAME
+
+        <input
+          type="text"
+          value="M15"
+          readonly>
+      </label>
+
+    </div>
+
+
+    <div class="trade-actions">
+
+      <button
+        id="buyBtn"
+        class="buy">
+        BUY
+      </button>
+
+      <button
+        id="sellBtn"
+        class="sell">
+        SELL
+      </button>
+
+    </div>
+
+
+    <p class="notice">
+      ⚠️ Paper trading only. No real money is used
+      and no broker orders are placed.
+    </p>
+
+  </section>
+
+
+  <!-- STRATEGY -->
+
+  <section class="card">
+
+    <div class="section-title">
+
+      <h3>GG STRATEGY</h3>
+
+      <span>EMA + RSI + ATR</span>
+
+    </div>
+
+
+    <div class="activity-item">
+      <span>Trend</span>
+      <strong>50 / 200 EMA</strong>
+    </div>
+
+
+    <div class="activity-item">
+      <span>Confirmation</span>
+      <strong>RSI 14</strong>
+    </div>
+
+
+    <div class="activity-item">
+      <span>Stop Loss</span>
+      <strong>ATR × 1.5</strong>
+    </div>
+
+
+    <div class="activity-item">
+      <span>Take Profit</span>
+      <strong>1 : 2 RR</strong>
+    </div>
+
+  </section>
+
+
+  <!-- ACTIVITY -->
+
+  <section class="card">
+
+    <div class="section-title">
+
+      <h3>ACTIVITY</h3>
+
+      <button
+        id="clear"
+        class="clear">
+        CLEAR
+      </button>
+
+    </div>
+
+
+    <div id="activity">
+
+      <p class="empty">
+        No demo trades yet.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SAVE PLAN -->
+
+  <section class="card">
+
+    <div class="section-title">
+
+      <h3>TRADING PLAN</h3>
+
+      <span>DEVICE STORAGE</span>
+
+    </div>
+
+
+    <p class="sub">
+      Save your current trading plan on this device.
+    </p>
+
+
+    <button id="savePlan">
+      SAVE TRADING PLAN
+    </button>
+
+  </section>
+
+
+  <!-- WARNING -->
+
+  <section class="card">
+
+    <h3>⚠️ IMPORTANT</h3>
+
+    <p class="notice">
+      This is a paper-trading application.
+      It does not connect to a broker and does not
+      place real trades.
+    </p>
+
+    <p class="notice">
+      Real automated trading should only be connected
+      after extensive backtesting and demo testing.
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+  GG TRADER • PAPER TRADING • DEMO FIRST
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
